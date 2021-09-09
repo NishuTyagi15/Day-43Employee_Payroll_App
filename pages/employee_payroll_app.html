@@ -48,7 +48,7 @@
             box-sizing: border-box;
         }
 
-        /* UC 1 */
+        /* UC 2 */
         .form-content {
             min-height: calc(100% - 80px);
             background-color: #f7f7f7;
@@ -81,9 +81,12 @@
             align-items: center;
             border: 0px soild green;
         }
-        .label {
+        label {
             padding: 12px 12px 12px 0;
             display: inline-block;
+        }
+        .label {
+            min-width: 140px;
         }
         .text {
             font-size: 16px;
@@ -95,7 +98,23 @@
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
+            border-radius: 4px;
             resize: vertical;
+        }
+        /* UC 3*/
+        .profile-radio-content {
+            display: flex;
+            flex-direction: row;
+        }
+        .profile-radio-content > label {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .profile {
+            width: 40px;
+            border-radius: 50%;
+            margin-left: 12px;
         }
     </style>
 </head>
@@ -110,12 +129,41 @@
             </div>
         </div>
     </header>
+
+    <!--UC 2-->
     <div class="form-content">
         <form class="form" action="#" onsubmit="save(event);return false">
             <div class="form-head">Employee Payroll Form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Your name.." required>
+            </div>
+        
+            <!--UC 3-->
+            <div class="row-content">
+                <label class="label text" for="profile">Profile Image</label>
+                <div class="profile-radio-content">
+                    <label>
+                        <input type="radio" id="profile1" name="profile"
+                            value="/assets/profile-images/Ellipse -3.png" required>
+                        <img class="profile" id="image1" src="/assets/profile-images/Ellipse -3.png">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile2" name="profile"
+                            value="/assets/profile-images/Ellipse 1.png" required>
+                        <img class="profile" id="image2" src="/assets/profile-images/Ellipse 1.png">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile3" name="profile"
+                            value="/assets/profile-images/Ellipse -8.png" required>
+                        <img class="profile" id="image3" src="/assets/profile-images/Ellipse -8.png">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile4" name="profile"
+                            value="/assets/profile-images/Ellipse -7.png" required>
+                        <img class="profile" id="image4" src="/assets/profile-images/Ellipse -7.png">
+                    </label>
+                </div>
             </div>
         </form>
     </div>
